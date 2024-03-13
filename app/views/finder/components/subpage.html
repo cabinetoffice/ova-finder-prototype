@@ -1,0 +1,72 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+  {% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content%}
+  <div class="govuk-grid-row">
+
+    <h1 class="govuk-heading-l govuk-grid-column-two-thirds">
+      {{data['name']}}
+    </h1>
+
+    <div class="govuk-grid-column-two-thirds">
+      <p>
+        {{data['description']}}
+      </p>
+
+      {# <p>
+        {{data['helps']}}
+      </p> #}
+
+      <h3 class="govuk-heading-m">
+        Contact
+      </h3>
+
+      <p>
+        Visit the <a href={{data['link']}}>organisation website</a>.
+      </p>
+
+      <h2 class="govuk-heading-m">
+        {{data['name']}} has responsibility for 
+      </h2>
+
+      <div class="helps-with">
+        <p>
+          Helps with: {{data['helps']}}
+        </p>
+        <p>
+          Location: {{data['local']}}
+        </p>
+      </div>
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      <div class="govuk-prototype-kit-common-templates-related-items">
+        <h2 class="govuk-heading-m">
+          Related content
+        </h2>
+        <ul class="govuk-list">
+          <li>
+            <a href="https://www.gov.uk/government/organisations/office-for-veterans-affairs" target="_blank">
+                Office for Veterans' Affairs
+              </a>
+          </li>
+          <li>
+            <a href="https://www.gov.uk/veteran-card" target="_blank">
+                Apply for an HM Armed Forces Veteran Card
+              </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+{% endblock %}

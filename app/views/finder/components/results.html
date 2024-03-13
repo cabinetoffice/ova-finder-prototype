@@ -1,0 +1,74 @@
+{%block content%}
+
+  {% set filters = [
+        {filterType: "health", data: data['health']},
+        {filterType: "finance", data: data['finance']},
+        {filterType: "legalHelp", data: data['legalHelp']},
+        {filterType: "employment", data: data['employment']},
+        {filterType: "educationTraining", data: data['educationTraining']},
+        {filterType: "housing", data: data['housing']},
+        {filterType: "family", data: data['family']},
+        {filterType: "community", data: data['community']},
+        {filterType: "ukWide", data: data['ukWide']},
+        {filterType: "england", data: data['england']},
+        {filterType: "northernIreland", data: data['northernIreland']},
+        {filterType: "scotland", data: data['scotland']},
+        {filterType: "wales", data: data['wales']}
+    ]%}
+
+  {# sortResults is a custom function that can be found in filter.js file #}
+  {% set results = filters | sortResults %}
+
+  <div class="govuk-grid-row ">
+    <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-m">
+        {{results | length}} results</h2>
+      <p>
+      Sorted by: <strong>A-Z</strong>
+      </p>
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+      <p class="contact-us">
+        <img src="/public/images/email.svg"></img>
+        <a href="#">Get emails</a>
+        <img src="/public/images/rss-feed.svg"></img>
+        <a href="#">Subscribe to feed</a>
+      </p>
+    </div>
+  </div>
+
+  {% include "./search-terms.html"%}
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+  {% if results | length == 0 %}
+    <div>
+      <p class="govuk-!-font-weight-bold">There are no matching results.</p>
+      <p>Improve your search results by:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>removing filters</li>
+        <li>double-checking your spelling</li>
+        <li>using fewer keywords</li>
+        <li>searching for something less specific</li>
+      </ul>
+    </div>
+  {% endif %}
+
+  {% for r in results %}
+    <div class="result">
+      <h2 class="govuk-heading-m">
+        <a href="components/subpage?name={{r.name}}&description={{r.description}}&link={{r.link}}&helps={{r.helpsWith}}&local={{r.location}}&email={{r.email}}&number={{r.number}}">{{r.name}}</a>
+      </h2>
+      <p>
+        {{r.description}}
+      </p>
+      <div id="charity-hint" class="govuk-hint charity">
+        Helps with: {{r.helpsWith}}
+      </div>
+      <div id="charity-hint" class="govuk-hint">
+        Location: {{r.location}}
+      </div>
+    </div>
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+  {% endfor %}
+
+{% endblock %}

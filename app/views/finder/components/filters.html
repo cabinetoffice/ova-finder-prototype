@@ -1,0 +1,441 @@
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{% block content %}
+
+<div class="govuk-form-group">
+  <h1 class="govuk-label-wrapper">
+    <label class="govuk-label" for="search">
+      Search
+    </label>
+  </h1>
+  <div class="govuk-input__wrapper">
+    <input class="govuk-input govuk-input" id="search" name="search" type="text" spellcheck="false">
+    <div class="govuk-input__suffix search-icon" aria-hidden="true">
+      <img src="/public/images/search-icon.svg"></img>
+    </div>
+  </div>
+</div>
+  <div class="card">
+    <form class="govuk-fieldset" action="/finder/home" method="post">
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+                Health and social care
+              </span>
+        </summary>
+        {{ govukCheckboxes({
+                  name: "health",
+                  classes: "govuk-checkboxes--small",
+                  items: [
+                    {
+                      value: "mental health",
+                      text: "Mental health"
+                    },
+                    {
+                      value: "physical health",
+                      text: "Physical health"
+                    },
+                    {
+                      value: "social care",
+                      text: "Social care"
+                    }
+                  ]
+                }) }}
+      </details>
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+                Finance
+              </span>
+        </summary>
+        {{ govukCheckboxes({
+                  name: "finance",
+                  classes: "govuk-checkboxes--small",
+                  items: [
+                    {
+                      value: "pensions",
+                      text: "Pensions"
+                    },
+                    {
+                      value: "compensations",
+                      text: "Compensations"
+                    },
+                    {
+                      value: "benefits",
+                      text: "Benefits"
+                    },
+                    {
+                      value: "financial help",
+                      text: "Financial help"
+                    },
+                    {
+                      value: "debt advice",
+                      text: "Debt advice"
+                    },
+                    {
+                      value: "funeral costs",
+                      text: "Funeral costs"
+                    },
+                    {
+                      value: "discounts",
+                      text: "Discounts"
+                    }
+                  ]
+                }) }}
+      </details>
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+                Legal help
+              </span>
+        </summary>
+        {{ govukCheckboxes({
+                  name: "legalHelp",
+                  classes: "govuk-checkboxes--small",
+                  items: [
+                    {
+                      value: "general legal advice",
+                      text: "General legal advice"
+                    },
+                    {
+                      value: "suppport for those in the justice system",
+                      text: "Suppport for those in the justice system"
+                    }
+                  ]
+                }) }}
+      </details>
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+                Employment
+              </span>
+        </summary>
+        {{ govukCheckboxes({
+                  name: "employment",
+                  classes: "govuk-checkboxes--small",
+                  items: [
+                    {
+                      value: "transition support and career advice",
+                      text: "Transition support and career advice"
+                    },
+                    {
+                      value: "support for jobseekers",
+                      text: "Support for jobseekers"
+                    },
+                    {
+                      value: "starting a business",
+                      text: "Starting a business"
+                    }
+                  ]
+                }) }}
+      </details>
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+                Education and training
+              </span>
+        </summary>
+        {{ govukCheckboxes({
+                  name: "educationTraining",
+                  classes: "govuk-checkboxes--small",
+                  items: [
+                    {
+                      value: "apprenticeships and in-work training",
+                      text: "Apprenticeships and in-work training"
+                    },
+                    {
+                      value: "other training and education",
+                      text: "Other training and education"
+                    },
+                    {
+                      value: "bursaries, scholarships and grants",
+                      text: "Bursaries, scholarships and grants"
+                    }
+                  ]
+                }) }}
+      </details>
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+                Housing
+              </span>
+        </summary>
+        {{ govukCheckboxes({
+                  name: "housing",
+                  classes: "govuk-checkboxes--small",
+                  items: [
+                    {
+                      value: "homelessness and crisis accommodation",
+                      text: "Homelessness and crisis accommodation"
+                    },
+                    {
+                      value: "care homes and supported housing",
+                      text: "Care homes and supported housing"
+                    },
+                    {
+                      value: "renting a home",
+                      text: "Renting a home"
+                    },
+                    {
+                      value: "buying a home",
+                      text: "Buying a home"
+                    }
+                  ]
+                }) }}
+      </details>
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+                Family and children 
+              </span>
+        </summary>
+        {{ govukCheckboxes({
+                  name: "family",
+                  classes: "govuk-checkboxes--small",
+                  items: [
+                    {
+                      value: "support for veterans' spouses and partners",
+                      text: "Support for veterans' spouses and partners"
+                    },
+                    {
+                      value: "childcare and custody",
+                      text: "Childcare and custody"
+                    },
+                    {
+                      value: "support with relationships",
+                      text: "Support with relationships"
+                    },
+                    {
+                      value: "domestic abuse",
+                      text: "Domestic abuse"
+                    }
+                  ]
+                }) }}
+      </details>
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+                Veterans community
+              </span>
+        </summary>
+        {{ govukCheckboxes({
+                  name: "community",
+                  classes: "govuk-checkboxes--small",
+                  items: [
+                    {
+                      value: "drop-ins and breakfast clubs",
+                      text: "Drop-ins and breakfast clubs"
+                    },
+                    {
+                      value: "leisure activities",
+                      text: "Leisure activities"
+                    },
+                    {
+                      value: "volunteering opportunities",
+                      text: "Volunteering opportunities"
+                    }
+                  ]
+                }) }}
+      </details>
+
+      <hr>
+      <br>
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+                UK Wide
+              </span>
+        </summary>
+
+        {{ govukCheckboxes({ 
+                  name: "ukWide",
+                  classes: "govuk-checkboxes--small",
+                  items: [
+                    {
+                      value: "UK Wide",
+                      text: "UK Wide"
+                    }
+                  ]
+                }) }}
+      </details>
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+                England
+              </span>
+        </summary>
+
+        {{ govukCheckboxes({ 
+                  name: "england",
+                  classes: "govuk-checkboxes--small",
+                  items: [
+                    {
+                      value: "England wide",
+                      text: "England wide"
+                    },
+                    {
+                      value: "North East and Yorkshire",
+                      text: "North East and Yorkshire"
+                    },
+                    {
+                      value: "North West",
+                      text: "North West"
+                    },
+                    {
+                      value: "Midlands",
+                      text: "Midlands"
+                    },
+                    {
+                      value: "East of England",
+                      text: "East of England"
+                    },
+                    {
+                      value: "London",
+                      text: "London"
+                    },
+                    {
+                      value: "South West",
+                      text: "South West"
+                    },
+                    {
+                      value: "South East",
+                      text: "South East"
+                    }
+                  ]
+                }) }}
+      </details>
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+                Northern Ireland
+              </span>
+        </summary>
+
+        {{ govukCheckboxes({ 
+                  name: "northernIreland",
+                  classes: "govuk-checkboxes--small",
+                  items: [
+                    {
+                      value: "Northern Ireland wide",
+                      text: "Northern Ireland wide"
+                    },
+                    {
+                      value: "North (Coleraine Area)",
+                      text: "North (Coleraine Area)"
+                    },
+                    {
+                      value: "South (Portadown Area)",
+                      text: "South (Portadown Area)"
+                    },
+                    {
+                      value: "East (Holywood Area)",
+                      text: "East (Holywood Area)"
+                    },
+                    {
+                      value: "West (Enniskillen Area)",
+                      text: "West (Enniskillen Area)"
+                    }
+                  ]
+                }) }}
+      </details>
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+                Scotland
+              </span>
+        </summary>
+
+        {{ govukCheckboxes({ 
+                  name: "scotland",
+                  classes: "govuk-checkboxes--small",
+                  items: [
+                    {
+                      value: "Scotland wide",
+                      text: "Scotland wide"
+                    },
+                    {
+                      value: "The Southern Uplands",
+                      text: "The Southern Uplands"
+                    },
+                    {
+                      value: "The Central Lowlands",
+                      text: "The Central Lowlands"
+                    },
+                    {
+                      value: "Grampian Mountains",
+                      text: "Grampian Mountains"
+                    },
+                    {
+                      value: "Northern Highlands, Hebrides and the Nothern Isles",
+                      text: "Northern Highlands, Hebrides and the Nothern Isles"
+                    }
+                  ]
+                }) }}
+      </details>
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+                Wales
+              </span>
+        </summary>
+
+        {{ govukCheckboxes({ 
+                  name: "wales",
+                  classes: "govuk-checkboxes--small",
+                  items: [
+                    {
+                      value: "Wales wide",
+                      text: "Wales wide"
+                    },
+                    {
+                      value: "Mid and West Wales",
+                      text: "Mid and West Wales"
+                    },
+                    {
+                      value: "North Wales",
+                      text: "North Wales"
+                    },
+                    {
+                      value: "South Wales Central",
+                      text: "South Wales Central"
+                    },
+                    {
+                      value: "South Wales East",
+                      text: "South Wales East"
+                    },
+                    {
+                      value: "South Wales West",
+                      text: "South Wales West"
+                    }
+                  ]
+                }) }}
+      </details>
+
+      <hr>
+      <br>
+
+      {{ govukButton({
+            text: "Apply filters"
+          }) }}
+
+      <div id="passport-issued-hint" class="govuk-hint">
+        <a href="/finder/home?health&finance&legalHelp&employment&educationTraining&housing&family&community&ukWide&england&northernIreland&scotland&wales">(clear filters)</a>
+      </div>
+    </form>
+  </div>
+
+{% endblock %}

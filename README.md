@@ -6,6 +6,13 @@ Fork or take a copy of this repository and create your own version of a finder
 
 As this is created using the Gov.uk prototype kit, it is easily hostable on Heroku as per the prototype instructions: https://prototype-kit.service.gov.uk/docs/publishing
 
+## Running this code 
+As this code is using the prototype kit, it is simple to run this project with the following command
+
+`npm run dev` 
+
+Navigate to `http://localhost:3000/finder/home` 
+
 ## Places to edit
 `home.html` for main copy of the finder 
 
@@ -38,7 +45,7 @@ For example:
                   ]
                 }) }}
 ```
-The value in mental health corresponds exactly to `helpsWith: ["mental health"],`
+The value in mental health corresponds exactly to the organisation data `helpsWith: ["mental health"],`
 
 ## Disclaimer
 There are probably bugs in this, but as it is for prototyping purposes it should be fine. 

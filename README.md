@@ -4,14 +4,19 @@ This prototype can be edited and used for user research sessions or just having 
 
 Fork or take a copy of this repository and create your own version of a finder
 
+As this is created using the Gov.uk prototype kit, it is easily hostable on Heroku as per the prototype instructions: https://prototype-kit.service.gov.uk/docs/publishing
+
 ## Places to edit
 `home.html` for main copy of the finder 
+
 `filters.html` for the list of filters you want 
+
 `subpage.html` to change what the subpages will look like 
+
 `filters.js` to change the filtering functionality 
 
 ## Gotchas
-make sure the "value" of your filters match exactly what is in the organisation data 
+Make sure the "value" of your filters match exactly what is in the organisation data 
 For example: 
 ``` 
 {{ govukCheckboxes({
